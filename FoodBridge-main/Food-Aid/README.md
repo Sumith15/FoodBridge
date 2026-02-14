@@ -29,7 +29,7 @@ A web application which allows users to manage their food donation and collectio
    ```sh
    npm start
    ```
-4. Open http://localhost:5000
+4. Open http://172.16.26.154:5000
 5. You need to first signup and then login to run the application.
 
 ## Features

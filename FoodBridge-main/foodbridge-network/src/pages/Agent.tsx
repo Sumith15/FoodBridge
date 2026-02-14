@@ -32,7 +32,7 @@ const Agent = () => {
   useEffect(() => {
     const fetchLocation = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/donation/${id}`);
+        const res = await fetch(`http://172.16.26.154:5000/api/donation/${id}`);
         const data = await res.json();
         setDonation(data);
       } catch (err) { console.error(err); }

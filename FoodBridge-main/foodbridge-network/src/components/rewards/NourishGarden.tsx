@@ -7,7 +7,7 @@
 // import { useAuth } from "@/context/AuthContext";
 
 // // ⚠️ Make sure this matches your Backend Port!
-// const API_URL = "http://localhost:5000/api/rewards"; 
+// const API_URL = "http://172.16.26.154:5000/api/rewards"; 
 
 // export default function NourishGarden() {
 //   const { user } = useAuth();
@@ -258,7 +258,7 @@ import { useAuth } from "@/context/AuthContext";
 import confetti from "canvas-confetti"; // Make sure to install: npm install canvas-confetti @types/canvas-confetti
 
 // ⚠️ Make sure this matches your Backend Port!
-const API_URL = "http://localhost:5000/api/rewards"; 
+const API_URL = "http://172.16.26.154:5000/api/rewards"; 
 
 export default function NourishGarden() {
   const { user } = useAuth();

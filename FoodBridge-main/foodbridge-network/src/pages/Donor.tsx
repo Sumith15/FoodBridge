@@ -95,7 +95,7 @@
 
 // // // //   const fetchDonations = async () => {
 // // // //     try {
-// // // //       const res = await fetch(`http://localhost:5000/api/donations?userId=${user?.id}`);
+// // // //       const res = await fetch(`http://172.16.26.154:5000/api/donations?userId=${user?.id}`);
 // // // //       const data = await res.json();
 // // // //       setHistory(data);
 // // // //     } catch (err) { console.error("History Error"); } 
@@ -182,7 +182,7 @@
 // // // //     setShowLocModal(false);
 // // // //     setIsSubmitting(true);
 // // // //     try {
-// // // //       const response = await fetch("http://localhost:5000/api/donate", {
+// // // //       const response = await fetch("http://172.16.26.154:5000/api/donate", {
 // // // //         method: "POST",
 // // // //         headers: { "Content-Type": "application/json" },
 // // // //         body: JSON.stringify({
@@ -492,7 +492,7 @@
 
 // // //   const fetchDonations = async () => {
 // // //     try {
-// // //       const res = await fetch(`http://localhost:5000/api/donations?userId=${user?.id}`);
+// // //       const res = await fetch(`http://172.16.26.154:5000/api/donations?userId=${user?.id}`);
 // // //       const data = await res.json();
 // // //       setHistory(data);
 // // //     } catch (err) { console.error("History Error"); } 
@@ -571,7 +571,7 @@
 // // //     setShowLocModal(false);
 // // //     setIsSubmitting(true);
 // // //     try {
-// // //       const response = await fetch("http://localhost:5000/api/donate", {
+// // //       const response = await fetch("http://172.16.26.154:5000/api/donate", {
 // // //         method: "POST",
 // // //         headers: { "Content-Type": "application/json" },
 // // //         body: JSON.stringify({
@@ -811,7 +811,7 @@
 // // L.Marker.prototype.options.icon = DefaultIcon;
 
 // // // --- API CONFIGURATION ---
-// // const API_URL = "http://localhost:5000";
+// // const API_URL = "http://172.16.26.154:5000";
 
 // // const statusConfig = {
 // //   pending: { color: "text-blue-400", border: "border-blue-400/30", icon: Clock, label: "Pending" },
@@ -1340,7 +1340,7 @@
 // L.Marker.prototype.options.icon = DefaultIcon;
 
 // // --- API CONFIGURATION ---
-// const API_URL = "http://localhost:5000";
+// const API_URL = "http://172.16.26.154:5000";
 
 // const statusConfig = {
 //   pending: { color: "text-blue-400", border: "border-blue-400/30", icon: Clock, label: "Pending" },
@@ -1895,7 +1895,7 @@ const DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 // --- API CONFIGURATION ---
-const API_URL = "http://localhost:5000";
+const API_URL = "http://172.16.26.154:5000";
 
 const statusConfig = {
   pending: { color: "text-blue-400", border: "border-blue-400/30", icon: Clock, label: "Pending" },

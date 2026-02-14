@@ -76,7 +76,7 @@
 //     if (myTasks.length === 0 || !agentLoc) return;
 //     const broadcast = () => {
 //         myTasks.forEach(task => {
-//             fetch(`http://localhost:5000/api/donation/${task._id}/location`, {
+//             fetch(`http://172.16.26.154:5000/api/donation/${task._id}/location`, {
 //                 method: "PUT",
 //                 headers: { "Content-Type": "application/json" },
 //                 body: JSON.stringify({ lat: agentLoc[0], lng: agentLoc[1] })
@@ -90,11 +90,11 @@
 
 //   const fetchTasks = async () => {
 //     try {
-//         const resAvail = await fetch("http://localhost:5000/api/donations?status=searching_agent");
+//         const resAvail = await fetch("http://172.16.26.154:5000/api/donations?status=searching_agent");
 //         setAvailableTasks(await resAvail.json());
 
 //         if (user?.id) {
-//             const resMy = await fetch(`http://localhost:5000/api/donations?agentId=${user.id}`);
+//             const resMy = await fetch(`http://172.16.26.154:5000/api/donations?agentId=${user.id}`);
 //             const dataMy = await resMy.json();
 //             setMyTasks(dataMy.filter((t: any) => t.status === "assigned" || t.status === "transit"));
 //         }
@@ -102,7 +102,7 @@
 //   };
 
 //   const handleAccept = async (id: string) => {
-//     await fetch(`http://localhost:5000/api/donation/${id}/claim`, {
+//     await fetch(`http://172.16.26.154:5000/api/donation/${id}/claim`, {
 //         method: "PUT",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify({ agentId: user?.id, agentName: user?.name })
@@ -114,10 +114,10 @@
 
 //   const handleAction = async (step: any) => {
 //     if (step.type === "pickup") {
-//         await fetch(`http://localhost:5000/api/donation/${step.task._id}/pickup`, { method: "PUT" });
+//         await fetch(`http://172.16.26.154:5000/api/donation/${step.task._id}/pickup`, { method: "PUT" });
 //         toast.success("Collected! AI Recalculating...");
 //     } else {
-//         await fetch(`http://localhost:5000/api/donation/${step.task._id}/deliver`, { method: "PUT" });
+//         await fetch(`http://172.16.26.154:5000/api/donation/${step.task._id}/deliver`, { method: "PUT" });
 //         toast.success("Safe Delivery Complete!");
 //     }
 //     fetchTasks();
@@ -509,7 +509,7 @@ const Volunteer = () => {
     if (myTasks.length === 0 || !agentLoc) return;
     const broadcast = () => {
         myTasks.forEach(task => {
-            fetch(`http://localhost:5000/api/donation/${task._id}/location`, {
+            fetch(`http://172.16.26.154:5000/api/donation/${task._id}/location`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ lat: agentLoc[0], lng: agentLoc[1] })
@@ -523,11 +523,11 @@ const Volunteer = () => {
 
   const fetchTasks = async () => {
     try {
-        const resAvail = await fetch("http://localhost:5000/api/donations?status=searching_agent");
+        const resAvail = await fetch("http://172.16.26.154:5000/api/donations?status=searching_agent");
         setAvailableTasks(await resAvail.json());
 
         if (user?.id) {
-            const resMy = await fetch(`http://localhost:5000/api/donations?agentId=${user.id}`);
+            const resMy = await fetch(`http://172.16.26.154:5000/api/donations?agentId=${user.id}`);
             const dataMy = await resMy.json();
             setMyTasks(dataMy.filter((t: any) => t.status === "assigned" || t.status === "transit"));
         }
@@ -535,7 +535,7 @@ const Volunteer = () => {
   };
 
   const handleAccept = async (id: string) => {
-    await fetch(`http://localhost:5000/api/donation/${id}/claim`, {
+    await fetch(`http://172.16.26.154:5000/api/donation/${id}/claim`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ agentId: user?.id, agentName: user?.name })
@@ -547,10 +547,10 @@ const Volunteer = () => {
 
   const handleAction = async (step: any) => {
     if (step.type === "pickup") {
-        await fetch(`http://localhost:5000/api/donation/${step.task._id}/pickup`, { method: "PUT" });
+        await fetch(`http://172.16.26.154:5000/api/donation/${step.task._id}/pickup`, { method: "PUT" });
         toast.success("Collected! Recalculating Sequence...");
     } else {
-        await fetch(`http://localhost:5000/api/donation/${step.task._id}/deliver`, { method: "PUT" });
+        await fetch(`http://172.16.26.154:5000/api/donation/${step.task._id}/deliver`, { method: "PUT" });
         toast.success("Safe Delivery Complete!");
     }
     fetchTasks();

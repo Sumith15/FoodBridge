@@ -2,7 +2,7 @@
 // const app = express();
 // const cors = require('cors');
 // app.use(cors({
-//   origin: 'http://localhost:8080', // Change to your Frontend port
+//   origin: 'http://172.16.26.154:8080', // Change to your Frontend port
 //   credentials: true
 // }));
 // const passport = require("passport");
@@ -58,7 +58,7 @@
 // app.use("/api/rewards", rewardsRoutes);
 
 // const port = process.env.PORT || 5000;
-// app.listen(port, console.log(`Server is running at http://localhost:${port}`));
+// app.listen(port, console.log(`Server is running at http://172.16.26.154:${port}`));
 
 
 const express = require("express");
@@ -86,7 +86,7 @@ require("./config/passport.js")(passport);
 // --- MIDDLEWARE ---
 // Allow requests from your React Frontend (Default Vite port is 5173)
 app.use(cors({
-  origin: 'http://localhost:8080', 
+  origin: 'http://172.16.26.154:8080', 
   credentials: true
 }));
 
@@ -132,4 +132,4 @@ app.use((req, res) => {
 });
 
 const port = process.env.PORT || 5000;
-app.listen(port, console.log(`Server is running at http://localhost:${port}`));
+app.listen(port, console.log(`Server is running at http://172.16.26.154:${port}`));

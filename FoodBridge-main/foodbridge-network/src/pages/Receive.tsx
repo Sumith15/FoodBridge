@@ -110,7 +110,7 @@
 // // //   const fetchAvailableDonations = async () => {
 // // //     try {
 // // //       // Fetch only "pending" donations
-// // //       const res = await fetch("http://localhost:5000/api/donations?status=pending");
+// // //       const res = await fetch("http://172.16.26.154:5000/api/donations?status=pending");
 // // //       const data = await res.json();
 // // //       setDonations(data);
 // // //     } catch (err) {
@@ -242,7 +242,7 @@
 // // //   const fetchAvailableDonations = async () => {
 // // //     try {
 // // //       // Fetch 'pending' donations
-// // //       const res = await fetch("http://localhost:5000/api/donations?status=pending");
+// // //       const res = await fetch("http://172.16.26.154:5000/api/donations?status=pending");
 // // //       const data = await res.json();
 // // //       setDonations(data);
 // // //     } catch (err) { toast.error("Could not load feed"); } 
@@ -252,7 +252,7 @@
 // // //   const handleAccept = async (id: string) => {
 // // //     try {
 // // //         // Send Receiver ID and LOCATION to backend
-// // //         await fetch(`http://localhost:5000/api/donation/${id}/accept`, {
+// // //         await fetch(`http://172.16.26.154:5000/api/donation/${id}/accept`, {
 // // //             method: "PUT",
 // // //             headers: { "Content-Type": "application/json" },
 // // //             body: JSON.stringify({ 
@@ -352,7 +352,7 @@
 
 // //   const fetchAvailableDonations = async () => {
 // //     try {
-// //       const res = await fetch("http://localhost:5000/api/donations?status=pending");
+// //       const res = await fetch("http://172.16.26.154:5000/api/donations?status=pending");
 // //       const data = await res.json();
 // //       setDonations(data);
 // //     } catch (err) { toast.error("Could not load feed"); } 
@@ -394,7 +394,7 @@
 // //     setShowLocModal(false);
 
 // //     try {
-// //         await fetch(`http://localhost:5000/api/donation/${selectedDonationId}/accept`, {
+// //         await fetch(`http://172.16.26.154:5000/api/donation/${selectedDonationId}/accept`, {
 // //             method: "PUT",
 // //             headers: { "Content-Type": "application/json" },
 // //             body: JSON.stringify({ 
@@ -593,7 +593,7 @@
 
 //   const fetchAvailableDonations = async () => {
 //     try {
-//       const res = await fetch("http://localhost:5000/api/donations?status=pending");
+//       const res = await fetch("http://172.16.26.154:5000/api/donations?status=pending");
 //       const data = await res.json();
 //       setDonations(data);
 //     } catch (err) { toast.error("Could not load feed"); } 
@@ -632,7 +632,7 @@
 //     setShowLocModal(false);
 
 //     try {
-//         await fetch(`http://localhost:5000/api/donation/${selectedDonationId}/accept`, {
+//         await fetch(`http://172.16.26.154:5000/api/donation/${selectedDonationId}/accept`, {
 //             method: "PUT",
 //             headers: { "Content-Type": "application/json" },
 //             body: JSON.stringify({ 
@@ -800,7 +800,7 @@
 
 //   const fetchAvailableDonations = async () => {
 //     try {
-//       const res = await fetch("http://localhost:5000/api/donations?status=pending");
+//       const res = await fetch("http://172.16.26.154:5000/api/donations?status=pending");
 //       const data = await res.json();
 //       setDonations(data);
 //     } catch (err) { toast.error("Could not load feed"); } 
@@ -874,7 +874,7 @@
 //     setShowLocModal(false);
 
 //     try {
-//         await fetch(`http://localhost:5000/api/donation/${selectedDonationId}/accept`, {
+//         await fetch(`http://172.16.26.154:5000/api/donation/${selectedDonationId}/accept`, {
 //             method: "PUT",
 //             headers: { "Content-Type": "application/json" },
 //             body: JSON.stringify({ 
@@ -1052,13 +1052,13 @@
 //   const fetchAvailableDonations = async () => {
 //     try {
 //       // 1. Fetch available pending donations
-//       const resPending = await fetch("http://localhost:5000/api/donations?status=pending");
+//       const resPending = await fetch("http://172.16.26.154:5000/api/donations?status=pending");
 //       const dataPending = await resPending.json();
       
 //       // 2. Fetch MY accepted donations (so they stay on screen to show tracking!)
 //       let dataMy = [];
 //       if (user?.id) {
-//           const resMy = await fetch(`http://localhost:5000/api/donations?receiverId=${user.id}`);
+//           const resMy = await fetch(`http://172.16.26.154:5000/api/donations?receiverId=${user.id}`);
 //           const rawMy = await resMy.json();
 //           // Filter to only show active ones, not delivered/expired
 //           dataMy = rawMy.filter((d: any) => ["searching_agent", "assigned", "transit"].includes(d.status));
@@ -1126,7 +1126,7 @@
 //     setShowLocModal(false);
 
 //     try {
-//         await fetch(`http://localhost:5000/api/donation/${selectedDonationId}/accept`, {
+//         await fetch(`http://172.16.26.154:5000/api/donation/${selectedDonationId}/accept`, {
 //             method: "PUT",
 //             headers: { "Content-Type": "application/json" },
 //             body: JSON.stringify({ 
@@ -1323,13 +1323,13 @@ const Receive = () => {
   const fetchAvailableDonations = async () => {
     try {
       // 1. Fetch available pending donations
-      const resPending = await fetch("http://localhost:5000/api/donations?status=pending");
+      const resPending = await fetch("http://172.16.26.154:5000/api/donations?status=pending");
       const dataPending = await resPending.json();
       
       // 2. Fetch MY accepted donations (so they stay on screen to show tracking!)
       let dataMy = [];
       if (user?.id) {
-          const resMy = await fetch(`http://localhost:5000/api/donations?receiverId=${user.id}`);
+          const resMy = await fetch(`http://172.16.26.154:5000/api/donations?receiverId=${user.id}`);
           const rawMy = await resMy.json();
           // Filter to only show active ones, not delivered/expired
           dataMy = rawMy.filter((d: any) => ["searching_agent", "assigned", "transit"].includes(d.status));
@@ -1397,7 +1397,7 @@ const Receive = () => {
     setShowLocModal(false);
 
     try {
-        await fetch(`http://localhost:5000/api/donation/${selectedDonationId}/accept`, {
+        await fetch(`http://172.16.26.154:5000/api/donation/${selectedDonationId}/accept`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ 
