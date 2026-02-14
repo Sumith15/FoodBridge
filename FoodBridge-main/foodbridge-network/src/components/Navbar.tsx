@@ -31,10 +31,10 @@ const Navbar = () => {
             {isAuthenticated ? (
               <>
                 {/* REWARDS LINK */}
-                <Link to="/rewards"className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors">
+                <Link to="/rewards"className="flex items-center gap-2 text-sm font-medium text-white hover:text-emerald-600 transition-colors">
                   <Gift size={18} className="text-emerald-500" />
                   <span>My Forest</span>
-                </Link>
+                </Link> 
 
                 {/* 1. DASHBOARD (First for everyone) */}
                 <Link to="/admin" className={`nav-item ${location.pathname === '/admin' ? 'active' : ''}`}>

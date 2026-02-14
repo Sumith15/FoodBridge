@@ -86,15 +86,15 @@ require("./config/passport.js")(passport);
 // --- MIDDLEWARE ---
 // Allow requests from your React Frontend (Default Vite port is 5173)
 app.use(cors({
-  origin: 'http://172.16.26.154:8080', 
+  origin: '*', 
   credentials: true
 }));
 
 app.set("view engine", "ejs");
 app.use(expressLayouts);
 app.use("/assets", express.static(__dirname + "/assets"));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json()); // Allows reading JSON from React
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.json({ limit: '50mb' }));
 
 app.use(session({
     secret: "secret",
